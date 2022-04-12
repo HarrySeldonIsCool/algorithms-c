@@ -18,7 +18,7 @@ float mypow(float a, float pow){
     float out = 1.0;
     __uint32_t bitpow = *(__uint32_t*)&pow;
     __uint32_t point = bitpow >> 23 & 0xff;
-    bitpow = (bitpow & 0x7fffff)+0x800000ů
+    bitpow = (bitpow & 0x7fffff)+0x800000;
     float inter = a;
     for (size_t i = 0x7f; i < point; i++){
         if(bitpow >> (point > i+23 ? 31 : 23+i-point) & 1) out *= inter;
